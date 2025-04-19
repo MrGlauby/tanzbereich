@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@tanzbereich/button": ["apps/libs/ui/controls/button/src/index.ts"],
+      "@tanzbereich/user-access": [
+        "apps/libs/tanzbereich/user-access/src/index.ts"
+      ],
+      "@tanzbereich/workspace": ["apps/libs/tanzbereich/workspace/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

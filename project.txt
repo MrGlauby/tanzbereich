@@ -1,0 +1,36 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    apps/
+    └── tanzbereich/    
+    libs/
+    └── tanzbereich/
+        └── user-access/
+        └── workspace/
+    └── ui/
+        └── controls/
+            └── radio-button/
+                ├── src/
+                │   ├── lib/
+                │   │   └── radio-button/              <-- Verzeichnis für die spezifische Komponente
+                │   │       ├── radio-button.component.html
+                │   │       ├── radio-button.component.scss
+                │   │       ├── radio-button.component.ts
+                │   │       └── radio-option.model.ts  <-- HIER kommt das Interface rein!
+                │   ├── index.ts                     <-- Library Entry Point (wichtig!)
+                │   └── test-setup.ts
+                ├── jest.config.ts
+                ├── package.json
+                ├── project.json
+                └── tsconfig.lib.json
