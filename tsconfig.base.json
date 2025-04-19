@@ -15,11 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tanzbereich/button": ["apps/libs/ui/controls/button/src/index.ts"],
-      "@tanzbereich/user-access": [
-        "apps/libs/tanzbereich/user-access/src/index.ts"
-      ],
-      "@tanzbereich/workspace": ["apps/libs/tanzbereich/workspace/src/index.ts"]
+      "@tanzbereich/button": ["libs/ui/controls/src/index.ts"],
+      "@tanzbereich/user-access": ["libs/tanzbereich/user-access/src/index.ts"],
+      "@tanzbereich/workspace": ["libs/tanzbereich/workspace/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
