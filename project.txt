@@ -17,9 +17,18 @@
     libs/
     └── tanzbereich/
         └── user-access/
+            └── src/
+              └── lib/
+                   ├── user-access/
+                   │    ├── user-access.component.ts
+                   ├── login/
+                   │    ├── login.component.ts
+                   └── registration/
+                        ├── registration.component.ts
         └── workspace/
     └── ui/
         └── controls/
+            └── input-control/
             └── radio-button/
                 ├── src/
                 │   ├── lib/
