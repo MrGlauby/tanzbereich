@@ -4,7 +4,7 @@ import { ButtonComponent } from '@tanzbereich/button';
 import { RouterLink } from '@angular/router';
 // import { InputControlComponent } from '@tanzbereich/input-control';
 @Component({
-  selector: 'lib-user-access',
+  selector: 'tz-user-access',
   templateUrl: './user-access.component.html',
   styleUrl: './user-access.component.css',
   imports: [CommonModule, ButtonComponent, RouterLink],
