@@ -1,11 +1,11 @@
 <div class="input-wrapper">
-    <label *ngIf="label">{{ label }}</label>
-    <input
-      [type]="type"
-      [value]="value"
-      [placeholder]="placeholder"
-      [disabled]="disabled"
-      (blur)="markAsTouched()"
-      (input)="onInput($event)"
-    />
-  </div>
+  <label *ngIf="label">{{ label }}</label>
+  <input
+    [type]="type"
+    [value]="value"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    (blur)="markAsTouched()"
+    (input)="onInput($event)"
+  />
+</div>

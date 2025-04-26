@@ -4,13 +4,11 @@
   <tz-button [isPrimary]="true" [label]="' to Workspace'"></tz-button>
 </a>
 
-
-<!-- <tz-input-control
-[type]="type"
-[value]="value"
-[placeholder]="placeholder"
-[disabled]="disabled"
-(blur)="markAsTouched()"
-(input)="onInput($event)"
-
-></tz-input-control> -->
+<div class="main-wrapper">
+  <div>
+    <tz-login></tz-login>
+  </div>
+  <div>
+    <tz-registration></tz-registration>
+  </div>
+</div>
