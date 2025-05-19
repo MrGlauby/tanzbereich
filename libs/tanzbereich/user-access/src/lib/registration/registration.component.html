@@ -1,9 +1,19 @@
+<div class="main-wrapper" formGroup="registrationForm">
+  <tz-input-control
+    [placeholder]="'Mail...'"
+    [type]="'email'"
+      formControlName="'email'"
+  ></tz-input-control>
 
-<div class="main-wrapper">
-<p>registration works!</p>
 
 
-<tz-input-control></tz-input-control>
-<tz-button [label]="'Registrieren'" [isPrimary]="true"></tz-button>
 
+  <tz-input-control
+    [placeholder]="'Password...'"
+    [type]="'password'"
+  ></tz-input-control>
+  <tz-button [label]="'Registrieren'" [isPrimary]="true"></tz-button>
 </div>
+
+<!-- Hier würdest du formControlName="password" hinzufügen -->
+<!-- Warum??? -->

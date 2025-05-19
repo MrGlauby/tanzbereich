@@ -1,11 +1,35 @@
-<div class="input-wrapper">
+
+<!-- MUSSTE NOCHMALS ÜBERSETZEN! -->
+<!-- Hier muss nopch control flows rein! -->
+<!-- <div class="input-wrapper" [class.invalid]="isInvalid">
+  <label *ngIf="label">{{ label }}</label>
+  <input
+  [disabled]="'isDisabled'"
+    [type]="type"
+    [value]="value"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    (blur)="onBlur()"
+    (input)="onInput($event)"
+  />
+  <div class="error-container" *ngIf="isInvalid">
+    <small class="error-message">{{ firstErrorMessage }}</small>
+  </div>
+</div> -->
+
+<div class="input-wrapper" [class.invalid]="isInvalid">
   <label *ngIf="label">{{ label }}</label>
   <input
     [type]="type"
     [value]="value"
     [placeholder]="placeholder"
-    [disabled]="disabled"
-    (blur)="markAsTouched()"
+    [disabled]="disabled"  
+    (blur)="onBlur()"
     (input)="onInput($event)"
   />
+  <!-- Fehleranzeige ist korrekt hier -->
+  <div class="error-container" *ngIf="isInvalid">
+    <small class="error-message">{{ firstErrorMessage }}</small>
+  </div>
 </div>
+

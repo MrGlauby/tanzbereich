@@ -1,7 +1,46 @@
-<div class="main-wrapper">
-  <p>login works!</p>
+<!-- FIX: [formGroup] verwenden -->
+<div class="main-wrapper" [formGroup]="loginForm">
 
-  <tz-input-control></tz-input-control>
+  <tz-input-control
+    [placeholder]="'Mail...'"
+    [type]="'email'"
+    formControlName="email"
+    [errorMessages]="{ required: 'E-Mail fehlt!', email: 'Ungültige E-Mail.' }"
+  ></tz-input-control>
+ <!-- Optional: Benutzerdefinierte Meldungen -->
+  <!-- Alter Fehleranzeige-Block für E-Mail ENTFERNT -->
 
-  <tz-button [label]="'Login'" [isPrimary]="true"></tz-button>
+  <tz-input-control
+    [placeholder]="'Password...'"
+    [type]="'password'"
+    formControlName="password"
+    [errorMessages]="{ required: 'Passwort fehlt!' }" 
+  ></tz-input-control>
+<!-- Optional: Benutzerdefinierte Meldungen -->
+  <!-- Alter Fehleranzeige-Block für Passwort ENTFERNT -->
+
+  <tz-button
+    [label]="'Login'"
+    [isPrimary]="true"
+    (click)="onSubmit()"
+    [isDisabled]="loginForm.invalid" 
+    
+  ></tz-button>
+<!-- FIX: [disabled] verwenden -->
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

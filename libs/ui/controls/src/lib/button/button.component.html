@@ -1,7 +1,7 @@
 <button
   [disabled]="isDisabled"
   class="button"
-  [ngClass]="{ primary: isPrimary }"
+  [ngClass]="{ primary: isPrimary, disabled: isDisabled }"
 >
   {{ label }}
 </button>

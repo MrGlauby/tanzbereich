@@ -12,7 +12,7 @@
 }
 
 .button.primary:hover {
-  background-color: darkblue;
+  background-color: rgb(172, 172, 172);
 }
 
 .button.disabled {
