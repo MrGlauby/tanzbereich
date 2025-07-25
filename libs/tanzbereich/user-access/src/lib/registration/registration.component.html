@@ -1,8 +1,9 @@
-<div class="main-wrapper" formGroup="registrationForm">
+<div class="main-wrapper" [formGroup]="registrationForm">
   <tz-input-control
     [placeholder]="'Mail...'"
     [type]="'email'"
-      formControlName="'email'"
+      formControlName="email"
+      [errorMessages]="{ required: 'E-Mail fehlt!', email: 'Ungültige E-Mail.' }"
   ></tz-input-control>
 
 
@@ -11,8 +12,17 @@
   <tz-input-control
     [placeholder]="'Password...'"
     [type]="'password'"
+    formControlName="password"
+    [errorMessages]="{ required: 'Passwort fehlt!' }" 
   ></tz-input-control>
-  <tz-button [label]="'Registrieren'" [isPrimary]="true"></tz-button>
+  
+   <tz-button
+    [label]="'Registrieren'"
+    [isPrimary]="true"
+    (click)="onSubmit()"
+    [isDisabled]="registrationForm.invalid" 
+  ></tz-button>
+
 </div>
 
 <!-- Hier würdest du formControlName="password" hinzufügen -->

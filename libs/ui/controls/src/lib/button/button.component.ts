@@ -37,7 +37,7 @@ export class ButtonComponent {
   }
 
   // --- Event Handler ---
-  onClick(event: MouseEvent) {
+  public onClick(event: MouseEvent) {
     if (!this.isDisabled) {
       this.click.emit(event);
     }

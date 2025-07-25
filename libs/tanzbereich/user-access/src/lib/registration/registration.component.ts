@@ -2,20 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InputControlComponent } from '@tanzbereich/input-control';
 import { ButtonComponent } from '@tanzbereich/button';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'tz-registration',
   templateUrl: './registration.component.html',
   styleUrl: './registration.component.css',
-  imports: [CommonModule, InputControlComponent, ButtonComponent],
+imports: [CommonModule, InputControlComponent, ButtonComponent, ReactiveFormsModule],
 })
 export class RegistrationComponent implements OnInit {
 
-
-
   registrationForm! : FormGroup; // Eine Variable für dein Formular-Modell
-
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(){

@@ -1,4 +1,4 @@
-import { Component, Input, Optional, Self } from '@angular/core';
+import { Component, inject, Input, Optional, Self } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   AbstractControl,
@@ -15,58 +15,55 @@ import {
   styleUrl: './input-control.component.css',
 })
 export class InputControlComponent implements ControlValueAccessor {
+  ngControl = inject(NgControl, { self: true, optional: true });
+
   @Input() label = '';
   @Input() type: 'text' | 'email' | 'password' | 'number' = 'text';
   @Input() placeholder = '';
   // --- NEU: Optionales Input für spezifische Fehlermeldungen ---
   @Input() errorMessages: { [key: string]: string } = {};
 
-  value: string | number = ''; // Kann auch number sein
-  disabled = false;
+  @Input() value: string | number = ''; // Kann auch number sein
+  @Input() disabled = false;
 
   // --- NgControl injizieren ---
-  // @Self() stellt sicher, dass wir die Direktive vom Host-Element bekommen
-  // @Optional() verhindert Fehler, falls die Komponente mal nicht in einem Formular verwendet wird
-  constructor(@Optional() @Self() public ngControl: NgControl) {
-    if (this.ngControl != null) {
-      // Dies weist Angular an, diese Komponente als ValueAccessor für das ngControl zu verwenden.
+  constructor() {
+    if (this.ngControl) {
       this.ngControl.valueAccessor = this;
     }
   }
 
   // --- ControlValueAccessor Methoden ---
-  onChange = (value: any) => {};
-  onTouched = () => {};
-
-  writeValue(value: any): void {
+  // leere Callback-Funktionen, die später von Angular Forms aufgerufen werden
+  public onChange = (value: any) => {};
+  public onTouched = () => {};
+  public writeValue(value: any): void {
     this.value = value;
   }
-
-  registerOnChange(fn: any): void {
+  public registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  public registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
 
-  setDisabledState(isDisabled: boolean): void {
+  public setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
 
   // --- Hilfsmethoden für das Template ---
-  get isInvalid(): boolean {
-    // Prüft, ob das verbundene Control ungültig UND berührt/geändert ist
+  public get isInvalid(): boolean {
     const control = this.ngControl?.control;
     return !!control && control.invalid && (control.touched || control.dirty);
   }
 
-  get errors(): ValidationErrors | null {
+  public get errors(): ValidationErrors | null {
     return this.ngControl?.control?.errors || null;
   }
 
   // Gibt die erste gefundene Fehlermeldung zurück
-  get firstErrorMessage(): string | null {
+  public get firstErrorMessage(): string | null {
     if (!this.isInvalid || !this.errors) {
       return null;
     }
